@@ -23,21 +23,31 @@ class Feed extends Component {
 
     getCommentaries() {
         return this.props.commentaries.map((commentary) => (
-            <Commentary key={commentary._id} commentary={commentary}/>
+            <Commentary key={commentary._id} commentary={commentary} />
         ));
     }
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <input
-                        placeholder="Add new commentary!"
-                        type="text"
-                        ref="commentaryInput"
-                    />
-                </form>
-                {this.getCommentaries()}
+            <div className="d-flex justify-content-center">
+                <div className="w-75 d-flex flex-column align-content-center">
+                    <div className="form-group">
+                        <h3 className="text-center">Comment this feed!</h3>
+                        <form onSubmit={this.handleSubmit.bind(this)}>
+                            <input
+                                placeholder="Add new commentary!"
+                                type="text"
+                                ref="commentaryInput"
+                                className="form-control w-100 comment-input"
+                            />
+                        </form>
+                    </div>
+
+                    <div className="commentaries-cont">
+                        {this.getCommentaries()}
+                    </div>
+
+                </div>
             </div>
         );
     }
@@ -45,6 +55,7 @@ class Feed extends Component {
 
 export default withTracker(() => {
     return {
-        commentaries: CommentariesCollection.find({}, {sort: {createdAt: -1}}).fetch(),
+        commentaries: CommentariesCollection.find({}, { sort: { createdAt: -1 } }).fetch(),
+        currentUser: Meteor.user()
     };
 })(Feed);

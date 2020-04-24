@@ -13,6 +13,8 @@ Meteor.methods({
         CommentariesCollection.insert({
             text,
             createdAt: new Date(),
+            owner: this.userId,
+            username: Meteor.users.findOne(this.userId).username,
         });
     },
     'commentary.remove'(commentaryId) {

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar.jsx'
-import Feed from './Feed.jsx'
+import Body from './Body.jsx'
 
 export default class App extends Component {
   
   render() {
     return <div>
       <NavBar/>
-      <Feed/>
+      <div className="container">
+        <hr/>
+        <Body/>
+        <hr/>
+      </div>
     </div>
   }
 }
