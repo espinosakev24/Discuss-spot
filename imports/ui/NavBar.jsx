@@ -23,7 +23,7 @@ class NavBar extends Component {
 
 
                     <div>
-                        <nav className="navbar d-flex justify-content-between align-content-center nav-container">
+                        <nav className="navbar d-flex justify-content-between align-content-center nav-container fixed-top">
                             <a className="navbar-brand ml-5" href="#">
                                 <div className="d-flex align-content-center brand-border">
                                     <div className="icon"></div> &nbsp;

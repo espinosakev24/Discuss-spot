@@ -21,5 +21,8 @@ Meteor.methods({
         check(commentaryId, String);
 
         CommentariesCollection.remove(commentaryId);
+    },
+    'commentary.update'(commentId, newText) {
+        CommentariesCollection.update(commentId, {$set: {text: newText}});
     }
 });

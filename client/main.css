@@ -62,7 +62,10 @@
 
 /* feed styles */
 
-.comment-input {
+.feed-container {
+    margin-top: 6rem;
+}
+.comment-input, .submit-button {
     margin-top: 1rem;
     height: 4rem;
 }
@@ -75,7 +78,7 @@
 }
 .commentary-info {
     background-color: white;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 0 2rem;
     border: 1px solid #908DA0;
     border-radius: .5rem;
     margin-bottom: 2rem;
@@ -96,7 +99,7 @@
     background-color: #d7385e;
 }
 .btn2 {
-    background-color: #419D78;
+    background-color: #363653;
 }
 
 .main-text {

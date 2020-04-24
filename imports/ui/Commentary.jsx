@@ -2,20 +2,44 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { CommentariesCollection } from '../api/commentaries.js'
+import ReactDOM from 'react-dom';
 const { format } = require('timeago.js');
 
 
 class Commentary extends Component {
 
+    state = {
+        isInEditMode: false
+    }
+
     getPrivateButtons() {
         if (Meteor.user()._id === this.props.commentary.owner) {
-            return (
-                <div>
-                    <button className="btn2 btns">Edit</button>  &nbsp;
-                    <button onClick={this.removeCommentary.bind(this)} className="btn1 btns">Remove</button>
-                </div>
-            );
+            if (!this.state.isInEditMode){
+                return (
+                    <div>
+                        <button className="btn2 btns" onClick={this.changeEditMode.bind(this)}>Edit</button>  &nbsp;
+                        <button onClick={this.removeCommentary.bind(this)} className="btn1 btns">Remove</button>
+                    </div>
+                );
+            } else {
+                return (
+                    <div>
+                        <button className="btn2 btns" onClick={this.updateTextValue.bind(this)}>Save</button>  &nbsp;
+                        <button onClick={this.changeEditMode.bind(this)} className="btn1 btns">Cancel</button>
+                    </div>
+                );
+            }
         }
+    }
+
+    updateTextValue() {
+        this.changeEditMode();
+        const newText = ReactDOM.findDOMNode(this.refs.newTextInput).value.trim();
+        Meteor.call('commentary.update', this.props.commentary._id, newText);
+    }
+
+    changeEditMode() {
+        this.setState({isInEditMode: !this.state.isInEditMode});
     }
 
     removeCommentary() {
@@ -33,9 +57,15 @@ class Commentary extends Component {
                 </div>
 
                 {/* Middle of the comment box, here goes the commentary text*/}
-                <div className="main-text">
-                    {this.props.commentary.text}
-                </div>
+                {!this.state.isInEditMode ?
+                    <div className="main-text" ref="currentText">
+                        {this.props.commentary.text}
+                    </div> :
+
+                    <div className="main-text">
+                        <textarea type="text" defaultValue={this.props.commentary.text} ref="newTextInput" className="w-100"></textarea>
+                    </div>
+                }
 
                 {/* bottom of the comment box, here goes the commentary date*/}
                 <p className="text-right">

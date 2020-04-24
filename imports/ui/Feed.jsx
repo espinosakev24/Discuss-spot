@@ -12,12 +12,16 @@ class Feed extends Component {
     // Handle the event when submitting a new comment to the feed
     handleSubmit(event) {
         event.preventDefault();
-        // Get the text from the input field
-        const text = ReactDOM.findDOMNode(this.refs.commentaryInput).value.trim();
-        // Call meteor insert global method
-        Meteor.call('commentary.insert', text);
 
-        ReactDOM.findDOMNode(this.refs.commentaryInput).value = '';
+        // Avoid sending empty commentaries
+        if(ReactDOM.findDOMNode(this.refs.commentaryInput).value.length != 0) {
+            // Get the text from the input field
+            const text = ReactDOM.findDOMNode(this.refs.commentaryInput).value.trim();
+            // Call meteor insert global method
+            Meteor.call('commentary.insert', text);
+    
+            ReactDOM.findDOMNode(this.refs.commentaryInput).value = '';
+        }
     }
 
 
@@ -29,17 +33,19 @@ class Feed extends Component {
 
     render() {
         return (
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center feed-container">
                 <div className="w-75 d-flex flex-column align-content-center">
                     <div className="form-group">
                         <h3 className="text-center">Comment this feed!</h3>
                         <form onSubmit={this.handleSubmit.bind(this)}>
-                            <input
-                                placeholder="Add new commentary!"
-                                type="text"
-                                ref="commentaryInput"
-                                className="form-control w-100 comment-input"
-                            />
+                            <div className="">
+                                <input
+                                    placeholder="Add new commentary!"
+                                    type="text"
+                                    ref="commentaryInput"
+                                    className="form-control comment-input w-100"
+                                />
+                            </div>
                         </form>
                     </div>
 
