@@ -63,7 +63,7 @@ class Commentary extends Component {
                     </div> :
 
                     <div className="main-text">
-                        <textarea type="text" defaultValue={this.props.commentary.text} ref="newTextInput" className="w-100"></textarea>
+                        <textarea type="text" defaultValue={this.props.commentary.text} ref="newTextInput" className="w-100 form-control"></textarea>
                     </div>
                 }
 

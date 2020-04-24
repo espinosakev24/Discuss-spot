@@ -1,4 +1,7 @@
-
+html {
+    scroll-behavior: smooth;
+    font-family: 'Baloo Paaji 2';
+}
 
 /* Navbar styles */
 
@@ -11,7 +14,7 @@
 }
 
 .icon {
-    background-image: url("/images/whitediscuss.svg");
+    background: url("/images/whitediscuss.svg");
     width: 2rem;
     height: 2remx;
     background-size: contain;
@@ -24,22 +27,48 @@
     border-radius: .3rem;
     padding: .3rem 2.5rem;
     letter-spacing: .1rem;
+    transition: .3s;
 }
 .brand-border:hover {
-    opacity: 90%;
-    
+    background-color: #d7385e;
+    color: #202040;
 }
-
+.roundboard {
+    padding: 0;
+    margin: 0;
+}
+@media (max-width: 800px) {
+    .roundboard {
+        display: none;
+    }
+  }
 
 
 /* Body styles */
+
+.body-container {
+    margin-top: 5rem;
+    font-family: 'Baloo Paaji 2';
+}
+
 .body-img {
     background-image: url("/body-img.jpg");
+    background-position: center center;
     width: 40rem;
     height: 30rem;
     background-size: contain;
     background-repeat: no-repeat;
+    border-radius: 3rem;
+    border-left: 1px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
+    -webkit-box-shadow: -7px 10px 20px -10px #656565;
+    -moz-box-shadow: -7px 10px 20px -10px #656565;
+    box-shadow: -7px 10px 20px -10px #656565;
 }
+.body-right {
+    padding-left: 3rem;
+}
+
 .body-right > h1 {
     color: #202040;
     font-size: 4rem;
@@ -49,25 +78,82 @@
 .body-right > p {
     font-size: 1rem;
     margin-bottom: 2rem;
+    color: #656565;
+    font-family: 'Baloo Paaji 2';
 }
-.body-right > button {
+.body-right > a {
     border: none;
     background-color: #202040;
     border-radius: .3rem;
     color: white;
+    font-weight: bold;
     height: 3rem;
 }
+.body-right > a:hover {
+    color: #202040;
+    background-color: white;
+    border: 1px solid #202040;
+    font-weight: bold;
+}
+/* Body section 2 styles */
+.section_2 {
+    margin-top: 2rem;
+}
+.section_2 > section {
+    margin-top: 7rem;
+    font-family: 'Baloo Paaji 2';
+}
+
+section > h1 {
+    color: #202040;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.accounts {
+    border: none;
+    background-color: #202040;
+    width: 50%;
+    color: white;
+    text-align: center;
+    height: 3rem;
+    border-radius: .5rem;
+    transition: 0.3s;
+}
+.accounts:hover {
+    color: #202040;
+    background-color:  white;
+    border: 1px solid #202040;
+}
+.section-2-img {
+    background-image: url("/section_2.jpg");
+    width: 36rem;
+    height: 20rem;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 3rem;
+    border-right: 1px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
+    -webkit-box-shadow: 0px 4px 16px -6px #B2B2B2;
+    -moz-box-shadow: 0px 4px 16px -6px #B2B2B2;
+    box-shadow: 0px 4px 16px -6px #B2B2B2;
+}
+
 
 
 
 /* feed styles */
 
 .feed-container {
+    font-family: 'Baloo Paaji 2';
     margin-top: 6rem;
+}
+.top-text {
+    color: #202040;
 }
 .comment-input, .submit-button {
     margin-top: 1rem;
-    height: 4rem;
+    height: 4rem !important;
 }
 
 .commentaries-cont {

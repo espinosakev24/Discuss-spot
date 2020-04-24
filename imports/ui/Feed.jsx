@@ -9,6 +9,10 @@ import { Meteor } from 'meteor/meteor';
 // Feed component represents the discussion board of the application
 class Feed extends Component {
 
+    componentDidMount() {
+        window.scrollTo(0,0);
+    }
+
     // Handle the event when submitting a new comment to the feed
     handleSubmit(event) {
         event.preventDefault();
@@ -36,7 +40,7 @@ class Feed extends Component {
             <div className="d-flex justify-content-center feed-container">
                 <div className="w-75 d-flex flex-column align-content-center">
                     <div className="form-group">
-                        <h3 className="text-center">Comment this feed!</h3>
+                        <h3 className="top-text">Welcome! this is the discussion board, now you can start commenting this feed!</h3>
                         <form onSubmit={this.handleSubmit.bind(this)}>
                             <div className="">
                                 <input

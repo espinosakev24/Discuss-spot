@@ -9,12 +9,12 @@ class NavBar extends Component {
             <div>
                 { !this.props.currentUser ?
                     <div>
-                        <nav className="navbar d-flex justify-content-center align-content-center nav-container">
-                            <a className="navbar-brand" href="#">
+                        <nav className="navbar d-flex justify-content-center align-content-center nav-container fixed-top">
+                            <a className="navbar-brand" href="#section_1">
                                 <div className="d-flex justify-content-center align-content-center brand-border">
                                     <div className="icon"></div> &nbsp;
                                     <div className="">
-                                        RoundBoard
+                                        <p className="roundboard">RoundBoard</p>
                                     </div>
                                 </div>
                             </a>
@@ -28,17 +28,17 @@ class NavBar extends Component {
                                 <div className="d-flex align-content-center brand-border">
                                     <div className="icon"></div> &nbsp;
                                     <div className="">
-                                        RoundBoard
+                                        <p className="roundboard">RoundBoard</p>
                                     </div>
                                 </div>
                             </a>
 
                             <a className="navbar-brand mr-5" href="#">
                                 <div className="d-flex align-content-center brand-border">
-                                    <div className="">
+                                    <section className="">
                                         <AccountsUIWrapper/>
                                         
-                                    </div>
+                                    </section>
                                 </div>
                                 
                             </a>
