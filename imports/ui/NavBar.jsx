@@ -14,7 +14,7 @@ class NavBar extends Component {
                                 <div className="d-flex justify-content-center align-content-center brand-border">
                                     <div className="icon"></div> &nbsp;
                                     <div className="">
-                                        <p className="roundboard">RoundBoard</p>
+                                        <p className="round">RoundBoard</p>
                                     </div>
                                 </div>
                             </a>
@@ -28,7 +28,7 @@ class NavBar extends Component {
                                 <div className="d-flex align-content-center brand-border">
                                     <div className="icon"></div> &nbsp;
                                     <div className="">
-                                        <p className="roundboard">RoundBoard</p>
+                                        <p className="roundboard round">RoundBoard</p>
                                     </div>
                                 </div>
                             </a>
