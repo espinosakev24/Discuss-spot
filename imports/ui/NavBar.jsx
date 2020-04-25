@@ -3,6 +3,8 @@ import AccountsUIWrapper from './AccountsUIWrapper.jsx'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data';
 
+
+// NavBar components renders a different navbar depending whether a user is logged or not
 class NavBar extends Component {
     render() {
         return (
