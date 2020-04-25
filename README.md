@@ -1,8 +1,8 @@
 # 
 
-A place to express complains, ideas, create debate and to give opinions. RoundBoard is a platform that provides to its users a discussion panel to comment a global thread.
+A place to express complains, ideas, create debates and give your opinions. RoundBoard is a platform that provides to its users a discussion panel to comment a global thread.
 
-<img align="center" src="https://imgur.com/irSPiPp" width="100%"/>
+<img align="center" src="https://i.imgur.com/irSPiPp.png" width="100%"/>
 
 
 ## Getting Started
@@ -61,7 +61,6 @@ And now, open a tab and go to http://localhost:3000/ and that's it!
 * [NodeJs](https://nodejs.org/es/) - Backend environment execution.
 * [ReactJS](https://es.reactjs.org/) - Javascript library for frontend.
 * [Bootstrap](https://getbootstrap.com/) - Frontend framework.
-* [AWS](https://aws.amazon.com/) - Cloud platform dor deployement.
 
 
 

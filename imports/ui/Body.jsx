@@ -23,7 +23,7 @@ class Body extends Component {
                         <div className="col-md-5 col-sm-12 d-flex align-content-center">
                             <div className="d-flex flex-column body-right justify-content-center">
                                 <h1>Join now our discussion board!</h1>
-                                <p>A place to express complains, ideas, create debate and to give opinions.
+                                <p>A place to express complains, ideas, create debates and give your opinions.
                                 RoundBoard is a platform that provides to its users a discussion panel to comment a global thread.
                             </p>
                                 <a href="#section_2" className="btn btn-block d-flex flex-column justify-content-center">GET STARTED!</a>
