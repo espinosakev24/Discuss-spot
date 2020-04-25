@@ -51,8 +51,12 @@ $cd <project root path>/
 $meteor run
 ```
 
-And now, open a tab and go to http://localhost:3000/ and that's it!
+And now, open a new tab and go to http://localhost:3000/ and that's it!
 
+
+## Deployment
+
+Deployment was made using heroku. Web page deployed in: [RoundBoard](https://roundboard.herokuapp.com/)
 
 
 ## Built With
